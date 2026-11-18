@@ -49,38 +49,38 @@
 }
 
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
+  --background: oklch(0.98 0.02 95);
+  --foreground: oklch(0.28 0.04 50);
+  --card: oklch(0.995 0.01 95);
+  --card-foreground: oklch(0.28 0.04 50);
+  --popover: oklch(0.995 0.01 95);
+  --popover-foreground: oklch(0.28 0.04 50);
+  --primary: oklch(0.55 0.14 185);
+  --primary-foreground: oklch(0.99 0.01 185);
+  --secondary: oklch(0.94 0.04 45);
+  --secondary-foreground: oklch(0.4 0.12 45);
+  --muted: oklch(0.95 0.02 95);
+  --muted-foreground: oklch(0.5 0.04 60);
+  --accent: oklch(0.94 0.05 95);
+  --accent-foreground: oklch(0.35 0.08 70);
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
-  --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  --border: oklch(0.9 0.03 80);
+  --input: oklch(0.9 0.03 80);
+  --ring: oklch(0.65 0.12 185);
+  --chart-1: oklch(0.72 0.17 45);
+  --chart-2: oklch(0.65 0.12 185);
+  --chart-3: oklch(0.78 0.14 95);
+  --chart-4: oklch(0.7 0.1 145);
+  --chart-5: oklch(0.62 0.14 25);
+  --radius: 0.85rem;
+  --sidebar: oklch(0.985 0.01 95);
+  --sidebar-foreground: oklch(0.28 0.04 50);
+  --sidebar-primary: oklch(0.55 0.14 185);
+  --sidebar-primary-foreground: oklch(0.99 0.01 185);
+  --sidebar-accent: oklch(0.94 0.04 45);
+  --sidebar-accent-foreground: oklch(0.4 0.12 45);
+  --sidebar-border: oklch(0.9 0.03 80);
+  --sidebar-ring: oklch(0.65 0.12 185);
 }
 
 .dark {
@@ -126,5 +126,154 @@
   }
   html {
     @apply font-sans;
+  }
+}
+
+/* Playful game atmosphere */
+.game-backdrop {
+  background:
+    radial-gradient(ellipse 80% 50% at 20% 10%, oklch(0.93 0.07 45 / 0.7), transparent 55%),
+    radial-gradient(ellipse 70% 45% at 85% 15%, oklch(0.93 0.06 185 / 0.65), transparent 50%),
+    radial-gradient(ellipse 60% 40% at 50% 100%, oklch(0.94 0.07 95 / 0.55), transparent 55%),
+    oklch(0.98 0.02 95);
+}
+
+.blob {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(40px);
+  opacity: 0.45;
+  animation: blob-float 12s ease-in-out infinite;
+}
+
+.blob-a {
+  top: 8%;
+  left: 8%;
+  width: 14rem;
+  height: 14rem;
+  background: oklch(0.82 0.12 45);
+}
+
+.blob-b {
+  top: 18%;
+  right: 6%;
+  width: 16rem;
+  height: 16rem;
+  background: oklch(0.82 0.1 185);
+  animation-delay: -4s;
+}
+
+.blob-c {
+  bottom: 6%;
+  left: 35%;
+  width: 18rem;
+  height: 12rem;
+  background: oklch(0.88 0.1 95);
+  animation-delay: -7s;
+}
+
+.game-card {
+  background: oklch(0.995 0.008 95 / 0.92);
+  backdrop-filter: blur(10px);
+  box-shadow:
+    0 20px 50px oklch(0.55 0.08 60 / 0.12),
+    0 2px 0 oklch(1 0 0 / 0.8) inset;
+}
+
+.board-grid {
+  background:
+    linear-gradient(145deg, oklch(0.94 0.04 185 / 0.5), oklch(0.95 0.05 45 / 0.45));
+  box-shadow: inset 0 1px 0 oklch(1 0 0 / 0.55);
+}
+
+.cell-button {
+  border: 2px solid oklch(1 0 0 / 0.65);
+  background: oklch(0.995 0.01 95 / 0.9);
+  box-shadow: 0 4px 0 oklch(0.82 0.04 80 / 0.35);
+  color: inherit;
+}
+
+.cell-button:hover:not(:disabled) {
+  background: oklch(1 0 0);
+  border-color: oklch(0.85 0.06 95);
+}
+
+.cell-win {
+  animation: win-pulse 0.9s ease-in-out infinite;
+  border-color: oklch(0.78 0.14 95) !important;
+  background: oklch(0.96 0.07 95) !important;
+  box-shadow: 0 0 0 3px oklch(0.85 0.12 95 / 0.45);
+}
+
+.mark-x {
+  color: oklch(0.58 0.19 40);
+  text-shadow: 0 2px 0 oklch(0.85 0.08 45 / 0.45);
+}
+
+.mark-o {
+  color: oklch(0.5 0.12 185);
+  text-shadow: 0 2px 0 oklch(0.8 0.06 185 / 0.45);
+}
+
+.mark-enter {
+  animation: mark-pop 0.28s cubic-bezier(0.2, 0.9, 0.3, 1.35);
+}
+
+.cell-pop {
+  animation: cell-bounce 0.28s ease-out;
+}
+
+@keyframes mark-pop {
+  0% {
+    transform: scale(0.2) rotate(-12deg);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes cell-bounce {
+  0% {
+    transform: scale(0.92);
+  }
+  60% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes win-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.04);
+  }
+}
+
+@keyframes blob-float {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(18px, -12px) scale(1.05);
+  }
+  66% {
+    transform: translate(-10px, 14px) scale(0.96);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .blob,
+  .cell-win,
+  .mark-enter,
+  .cell-pop {
+    animation: none !important;
   }
 }
